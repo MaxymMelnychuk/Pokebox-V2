@@ -1,0 +1,292 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p { /* delete */
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+h1 {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-weight: 900;
+   
+    
+    
+}
+
+:root {
+    /* Light Mode */
+    --light-menu:#000000;
+    --light-bg:#FFFFFF;
+    --light-bg2:#F2F2F2;
+    --light-bg3:#F2F2F2;
+
+    /* Dark Mode */
+    --dark-menu:#FFFFFF;
+    --dark-bg:#292E3D;
+    --dark-bg2:#1C1F28;
+    --dark-bg3:#353B4D;
+
+}
+
+header {
+    z-index: 5;
+    position: fixed;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    font-family: "Inter", sans-serif;
+    background-color: #20243348;
+    border-radius: 15px;
+}
+
+.logo {
+    margin-left: 15px;
+    gap: 15px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-bar {
+    margin-right: 30px;
+    gap: 30px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--dark-bg2);
+}
+ 
+
+.burger {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+   
+}
+
+.burger > .line {
+    transition: background-color 0.5s ease;
+}
+
+.burger:hover > .line  {
+    background-color: #FFCF32;
+}
+
+.line {
+    
+    width:50px;
+    height: 3px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* Rotate burger */
+
+.move1, .move2, .move3 {
+    animation-duration: 0.5s;
+    animation-name: slide;
+}
+
+.line1 {
+    
+    position: absolute;
+    transform: rotate(45deg); 
+    
+    
+} 
+
+.line2 {
+    
+    opacity: 0; 
+}
+
+.line3 {
+
+   position: absolute;
+   transform: rotate(-45deg); 
+} 
+
+.link-page {
+    font-weight: 300;
+    color: var(--dark-menu);
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+a:hover, .burger:hover {
+    color: #FFCF32;
+}
+
+.register {
+    background-color: #FFCF32;
+    border-radius: 10px;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    width: max-content;
+    height: 35px;
+}
+
+.main-home {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-evenly;
+    background-color: #14171E;
+   
+}
+
+.left-color-home {
+    position: absolute;
+    border-radius: 0 50px 50px 0;
+    height: 100vh;
+    width: 70vw;
+    background-color: #191D26;
+    z-index: 1;
+  
+}
+
+.home-text {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    gap: 5%;
+    flex-direction: column;
+    width: 50%;
+    height: 70%;
+    z-index: 1;
+}
+
+.pikachu-img {
+    z-index: 2;
+    height: 55%;
+}
+
+
+.mainContent {
+    background-color: #1f2331;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    width: 80%;
+    height: 75%;
+    border-radius: 15px;
+    background-color: #242935;
+    padding-bottom: 40px;
+}
+
+legend {
+    color: white;
+    font-size: 2.5rem;
+    margin-left: 5%;
+    font-weight: 600;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.container-cards {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+.card {
+    width: 70%;
+    height: 80%;
+    background-color: #272c3d;
+}
+.name-card {
+    margin-top: 20px;
+}
+
+/* menu 
+.nav-menu {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 2%;
+    line-height: 50px;
+    width: 25vw;
+    height: 75vh;
+    border-radius: 15px;
+    background-color: #3e4559da;
+    z-index: 10;
+    right: 0;
+} */
+
+@media only screen and (max-width: 1024px) {
+    .link-page, .pikachu-img {
+      display: none;
+    }
+
+    .home-text {
+        flex: 1;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+}
+
+
+  @keyframes slide {
+    from {
+        position: absolute;
+        transform: rotate(-45deg); 
+    }
+
+    to {
+        position: absolute;
+        transform: rotate(0deg); 
+    }
+  }
+
+
+
+
+
